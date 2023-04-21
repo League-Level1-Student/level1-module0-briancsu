@@ -10,24 +10,16 @@ import org.jointheleague.graphical.robot.Robot;
  */
 public class Houses {
 	static Robot rob;
-	public static void main(String[] args) {
+	public static void mai(String[] args) {
 		rob = new Robot();
 		
 		rob.moveTo(25, 350);
 		rob.setSpeed(100);
 		rob.penDown();
-		run("Small", new Color(255,0,0));
-		run("Large", new Color(0,0,255));
-		run("medium", new Color(255,255,0));
-		run("Small", new Color(255,0,255));
-		run("medium", new Color(0,255,0));
-		run("large", new Color(255,0,255));
-		run("Small", new Color(0,0,255));
-		run("medium", new Color(255,255,0));
-		run("large", new Color(255,0,0));
+		
 	}	
 	
-	public static void run(String num, Color c)
+	public void run(String num, Color c)
 	{
 		if (num.equalsIgnoreCase("Small")) {
 			run(80, c);
