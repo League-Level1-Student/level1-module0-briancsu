@@ -30,10 +30,9 @@ import processing.core.PApplet;
  *    "red value", and i as the "green value" for some extra color coolness.
  */
 public class MagicWorms extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 600;
-    float wormX = 0;
-    float wormY = 0;
+    static final int WIDTH = 1000;
+    static final int HEIGHT = 1000;
+    static boolean num = true;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -42,17 +41,24 @@ public class MagicWorms extends PApplet {
     @Override
     public void setup() {
     	background(0,0,0);
+    	
     }
 
     @Override
     public void draw() {
-    	fill(255,0,0);
+    	
+    	makeMagical();
+    	
     	for(int i = 1; i < 300; i++) {
-    		ellipse(wormX, wormY, 1,1);
-    		wormX = random(int maxValue);
-    		wormY = random(int maxValue);
+    		fill(frameCount,0,frameCount);
+    		ellipse(getWormX(i), getWormY(i), 8,8);
+    		
+    		if(i>=299) {
+    			num = false;
+    		}
     	}
     }
+    
 
     static public void main(String[] args) {
         PApplet.main(MagicWorms.class.getName());
