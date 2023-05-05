@@ -19,7 +19,12 @@ public class ListOfGoals {
 		
 		//4. Call the appropriate method to see if you put a lot of goals,
 		//   if you did put a lot of goals use a pop-up to say "Wow that's a lot of goals! Awesome!"
-		
+		createListOfGoals();
+		JOptionPane.showMessageDialog(null, getListOfGoals());
+		JOptionPane.showMessageDialog(null, getNumberOfGoals());
+		if(isManyGoals()) {
+			JOptionPane.showMessageDialog(null, "Wow that's a lot of goals! Awesome!");
+		}
 	}
 	
 	static void createListOfGoals() {

@@ -17,15 +17,22 @@ public class FinishLine {
 	
 	public static void main(String[] args) {
 		//1. Call the drawFinishLine() method
-		
+		drawFinishLine();
 		//2. Call the crazyMove() method to move the robot
-		
+		crazyMove();
 		//3. Call the getTotalDistance() and save what is returned into a variable
+		int y = getTotalDistance();
 		
 		//4. Call the hasCrossedFinishLine() method and save what is returned into a variable
-		
+		boolean x = hasCrossedFinishLine();
 		//5. If the robot has crossed the finish line... 
-			
+			if(x) {
+				JOptionPane.showMessageDialog(null, "You finished and went "+y+" units.");
+			}
+			else {
+				
+				JOptionPane.showMessageDialog(null, "You did not finish and went "+y+" units.");
+			}
 			//6. Use a pop up to say the robot finished and how far it went
 		
 		
