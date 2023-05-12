@@ -26,21 +26,32 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
-
+		int score = 0;
+		String image1 = "https://images.unsplash.com/photo-1557683311-eac922347aa1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1129&q=80";
+		String image2 = "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1129&q=80";	
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component compon1;
+		Component compon2;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		compon1 = createImage(image1);
+		compon2 = createImage(image2);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(compon1);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String question1 = JOptionPane.showInputDialog("What color is this? ");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if(question1.equalsIgnoreCase("blue"))
+				{
+			JOptionPane.showMessageDialog(null, "CORRECT");
+			score++;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		quizWindow.remove(compon1);
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
 
@@ -48,13 +59,23 @@ public class PhotoQuiz {
 		// of code)
 
 		// 11. add the second image to the quiz window
-
+		quizWindow.add(compon2);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		String question2 = JOptionPane.showInputDialog("What color is this? ");
+		// 7. print "CORRECT" if the user gave the right answer
+		if(question2.equalsIgnoreCase("pink"))
+				{
+			JOptionPane.showMessageDialog(null, "CORRECT");
+			score++;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		JOptionPane.showMessageDialog(null, "Your score was " +score);
+	
 	}
 
 	private Component createImage(String imageUrl) {

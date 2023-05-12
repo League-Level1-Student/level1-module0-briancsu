@@ -15,7 +15,8 @@ public class FlappyBird extends PApplet {
     static int lowPipeX = 250;
     static  int upPipeY = -130;
     static int lowPipeY = 375;
-    static  int pipeGap = 500;
+    static  int pipeGap = 530;
+    static int score = 0;
     PImage back;
     PImage pipeBottom;
     PImage pipeTop;
@@ -56,6 +57,13 @@ public class FlappyBird extends PApplet {
     	if(birdY >= HEIGHT) {
     		System.exit(0);
     	}
+    	text(score, 475, 725);
+    	if(birdX > lowPipeX && lowPipeX <= 3) {
+    		score+=1;
+
+    	}
+    	
+    	
     }
     
    boolean intersectsPipes() { 
@@ -83,7 +91,7 @@ public class FlappyBird extends PApplet {
     public void teleportePipes() {
     		lowPipeX = 500;
     		upPipeX = 500;
-    		upPipeY = (int) random(-200, 200);
+    		upPipeY = (int) random(-170, 170);
     		lowPipeY = upPipeY + pipeGap;
     	
     }
