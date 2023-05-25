@@ -8,5 +8,6 @@ package _03_gui_with_help._4_body_part_quiz;
 public class BodyPartQuizRunner {
 	public static void main(String[] args) {
 		new BodyPartQuiz().run();
+		
 	}
 }
