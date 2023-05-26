@@ -1,10 +1,34 @@
 package _04_gui_from_scratch._2_jack_in_the_box;
 
+import java.applet.AudioClip;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JApplet;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class jack_in_the_box {
-	 private void showPicture(String fileName) {
+public class jack_in_the_box implements ActionListener {
+	int num = 5;
+	public static void main(String[] args) {
+		jack_in_the_box jack = new jack_in_the_box();
+		jack.run();
+	}
+	private void run() {
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
+		JButton button = new JButton();
+		frame.add(button);
+		button.setText("Suprise");
+		button.addActionListener(this);
+		frame.pack();
+	}
+	
+	private void showPicture(String fileName) {
 	     try {
 	          JLabel imageLabel = createLabelImage(fileName);
 	          JFrame frame = new JFrame();
@@ -32,5 +56,22 @@ public class jack_in_the_box {
 	          System.err.println("Could not find image " + fileName);
 	          return new JLabel();
 	     }
+	}
+	private void playSound(String soundFile) {
+	     try {
+	          AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
+	          sound.play();
+	     } catch (Exception e) {
+	          e.printStackTrace();
+	     }
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		num -= 1;
+		if(num == 0) {
+			showPicture("jackInTheBox.png");
+			playSound("homer-woohoo.wav");
+		}
 	}
 }

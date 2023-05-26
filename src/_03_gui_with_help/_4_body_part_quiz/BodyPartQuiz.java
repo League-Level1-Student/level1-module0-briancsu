@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String arnold = "src/_05_body_part_quiz/arnold.jpeg";
-	String leonardo = "src/_05_body_part_quiz/leonardo.jpeg";
-	String morgan = "src/_05_body_part_quiz/morgan.jpeg";
-	String jack = "src/_05_body_part_quiz/jack.jpeg";
+	String arnold = "src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String leonardo = "src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String morgan = "src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String jack = "src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 250);
+		window.setSize(100, 150);
 
 		showNextImage();
 
@@ -68,6 +68,7 @@ public class BodyPartQuiz {
 			System.out.println("Incorrect - It was Arnold.");
 			showNextImage();
 		}
+		System.out.println("Your score is "+score);
 		String guess2 = JOptionPane.showInputDialog("Who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
@@ -81,6 +82,7 @@ public class BodyPartQuiz {
 			System.out.println("Incorrect - It was Leonardo.");
 			showNextImage();
 		}
+		System.out.println("Your score is "+score);
 		String guess3 = JOptionPane.showInputDialog("Who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
@@ -94,6 +96,7 @@ public class BodyPartQuiz {
 			System.out.println("Incorrect - It was Morgan.");
 			showNextImage();
 		}
+		System.out.println("Your score is "+score);
 		String guess4 = JOptionPane.showInputDialog("Who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
@@ -107,7 +110,7 @@ public class BodyPartQuiz {
 			System.out.println("Incorrect - It was Jack.");
 			showNextImage();
 		}
-		
+		System.out.println("Your score is "+score);
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
 

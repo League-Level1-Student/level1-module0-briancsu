@@ -6,25 +6,28 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class fortune_cookie implements ActionListener{
     public void showButton() {
         JFrame frame = new JFrame();
+        frame.setVisible(true);
         JButton button = new JButton();
         frame.add(button);
         frame.pack();
         button.addActionListener(this);
         int rand = new Random().nextInt(5);
+       
         if(rand == 0) {
         	System.out.println("You will have long life");
         }
         else if(rand == 1) {
         	System.out.println("You will be rich");
         }
-        if(rand == 0) {
+        if(rand == 2) {
         	System.out.println("You will have many friends");
         }
-        if(rand == 0) {
+        if(rand == 3) {
         	System.out.println("You will know many different things");
         }
    }
@@ -32,6 +35,6 @@ public class fortune_cookie implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		JOptionPane.showMessageDialog(null, "Wohoo!");
 	}
 }
